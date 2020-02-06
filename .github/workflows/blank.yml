@@ -21,7 +21,7 @@ jobs:
         KEY: ${{ secrets.api_key_value }}
         WORD: word
       run: |
-        echo https://www.googleapis.com/youtube/v3/search?key=${env:KEY}&part=snippet,id&order=date&maxResults=1
+        echo https://www.googleapis.com/youtube/v3/search?key=${env:WORD}&part=snippet,id&order=date&maxResults=1
         echo ${env:KEY_LABEL} ${env:KEY}
     #- name: Decrypt large secret
       #run: |
