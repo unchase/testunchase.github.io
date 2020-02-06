@@ -1,6 +1,6 @@
 # Scriptor
 
-Scriptor is a simple, minimal, clean & responsive Jekyll theme for writers. 1
+Scriptor is a simple, minimal, clean & responsive Jekyll theme for writers. 12
 
 [Live Demo](https://scriptor-jekyll.netlify.com/) &nbsp; | &nbsp; [Download](https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme/archive/master.zip) &nbsp;
 
