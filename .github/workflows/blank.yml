@@ -16,9 +16,8 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: setting variables from secrets
-      run: |
-        KEY_LABEL=${{ secrets.api_key_label }}
-        KEY=${{ secrets.api_key_value }}
-    - name: print secrets
+      env:
+        KEY_LABEL: ${{ secrets.api_key_label }}
+        KEY: ${{ secrets.api_key_value }}
       run: |
         echo ${KEY_LABEL} ${KEY}
