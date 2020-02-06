@@ -22,4 +22,6 @@ jobs:
         WORD: word
       run: |
         echo $KEY_LABEL $KEY $WORD
+        echo https://www.googleapis.com/youtube/v3/search?key=${env:KEY}&part=snippet,id&order=date&maxResults=1
+        echo https://www.googleapis.com/youtube/v3/search?key=$KEY&part=snippet,id&order=date&maxResults=1
         echo ${env:KEY_LABEL} ${env:KEY}
