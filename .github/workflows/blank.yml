@@ -19,5 +19,6 @@ jobs:
       env:
         KEY_LABEL: ${{ secrets.api_key_label }}
         KEY: ${{ secrets.api_key_value }}
+        WORD: word
       run: |
-        echo $KEY_LABEL $KEY
+        echo $KEY_LABEL $KEY $WORD
