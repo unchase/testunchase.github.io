@@ -26,7 +26,7 @@ jobs:
     - name: Decrypt large secret
       run: ./.github/scripts/decrypt_secret.sh
       env:
-        TEST: ${{ secrets.api_key_value }}
+        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     # This command is just an example to show your secret being printed
     # Ensure you remove any print statements of your secrets. GitHub does
     # not hide secrets that use this workaround.
