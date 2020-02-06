@@ -24,7 +24,9 @@ jobs:
         echo https://www.googleapis.com/youtube/v3/search?key=${env:KEY}&part=snippet,id&order=date&maxResults=1
         echo ${env:KEY_LABEL} ${env:KEY}
     - name: Decrypt large secret
-      run: ./decrypt_secret.sh
+      run: |
+        chmod +x ./decrypt_secret.sh
+        ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     # This command is just an example to show your secret being printed
