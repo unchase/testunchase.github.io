@@ -21,5 +21,14 @@ jobs:
         KEY: ${{ secrets.api_key_value }}
         WORD: word
       run: |
-        echo 'https://www.googleapis.com/youtube/v3/search?key=${env:KEY}&part=snippet,id&order=date&maxResults=1'
+        echo https://www.googleapis.com/youtube/v3/search?key=${env:KEY}&part=snippet,id&order=date&maxResults=1
         echo ${env:KEY_LABEL} ${env:KEY}
+    - name: Decrypt large secret
+      run: ./.github/scripts/decrypt_secret.sh
+      env:
+        TEST: ${{ secrets.api_key_value }}
+    # This command is just an example to show your secret being printed
+    # Ensure you remove any print statements of your secrets. GitHub does
+    # not hide secrets that use this workaround.
+    - name: Test printing your secret (Remove this step in production)
+      run: cat $HOME/secrets/my_secret.json
