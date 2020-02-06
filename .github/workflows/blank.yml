@@ -14,7 +14,7 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
-        echo test, and deploy your project.
+        echo test1, and deploy your project.
     - name: setting variables from secrets
       env:
         KEY_LABEL: ${{ secrets.api_key_label }}
