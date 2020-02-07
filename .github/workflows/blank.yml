@@ -1,26 +1,38 @@
+# название для action
 name: CI
 
+### запускать каждые 15 минут ###
+#on: 
+#  schedule:
+#    - cron: '*/15 * * * *'
+###---------------------------###
+
+# запуск при push в репозиторий
 on: [push]
 
+# выполняемые действия
 jobs:
+  # id действия
   build:
 
+    # запуск из-под ubuntu
     runs-on: ubuntu-latest
 
+    # шаги действия
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
+    - name: Run a one-line script # имя шага
+      run: echo Hello, world! # запуск
+    - name: Run a multi-line script # имя шага
+      run: | # запуск (многострочный)
         echo Add other actions to build,
         echo test1, and deploy your project.
-    - name: setting variables from secrets
-      env:
+    - name: setting variables from secrets # имя шага
+      env: # задаём переменные окружения
         KEY_LABEL: ${{ secrets.api_key_label }}
         KEY: ${{ secrets.api_key_value }}
         WORD: word
-      run: |
+      run: | # запуск (многострочный)
         echo https://www.googleapis.com/youtube/v3/search?key=${env:WORD}&part=snippet,id&order=date&maxResults=1
         echo ${env:KEY_LABEL} ${env:KEY}
     #- name: Decrypt large secret
